@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.genghis.leo.security.dao.RoleDao">
+
+    <select id="findAllRoleNamesByLoginName" resultType="string">
+        SELECT sr.`role_name` FROM
+         sys_user su,
+         sys_user_role ur,
+         sys_role sr
+         WHERE su.`user_id` =ur.`user_id`
+         AND ur.`role_id`=sr.`id`
+         AND su.`login_name`=#{loginName}
+    </select>
+
+    <select id="findAllRolePermTokensByLoginName" resultType="string">
+          SELECT
+          rp.`perm_token`
+          FROM
+          sys_user su,
+          sys_user_role ur,
+          acl_role_permission rp
+          WHERE su.`user_id` = ur.`user_id`
+          AND ur.`role_id` = rp.`role_id`
+          AND su.`login_name`=#{loginName}
+    </select>
+
+    <select id="getRoleListPage" resultType="Role">
+        SELECT * FROM sys_role
+        <where>
+            <if test="roleName != null and roleName != ''">
+                AND role_name LIKE concat('%',#{roleName},'%')
+            </if>
+            <if test="roleDescription != null and roleDescription !=''">
+                AND  role_description LIKE concat('%',#{roleDescription},'%')
+            </if>
+        </where>
+        ${sortField} ${sortOrder}
+    </select>
+
+    <insert id="addRole" parameterType="Role"  useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO sys_role (role_name,role_description) VALUES
+        (#{roleName},#{roleDescription})
+    </insert>
+
+    <select id="findRoleByUserId" parameterType="int" resultType="Role">
+        SELECT r.* FROM sys_role r,sys_user_role ur
+        WHERE ur.role_id=r.id
+        AND ur.user_id=#{userId}
+    </select>
+
+    <delete id="delRoleDo" parameterType="int">
+        DELETE FROM sys_role WHERE id = #{id}
+    </delete>
+
+    <select id="findRoleById" parameterType="int" resultType="Role">
+        SELECT * FROM sys_role WHERE id=#{id}
+    </select>
+
+    <update id="editRole" parameterType="Role">
+        UPDATE sys_role SET role_name=#{roleName},role_description=#{roleDescription} WHERE id=#{id}
+    </update>
+    
+    <select id="checkRepeatRoleNameNum" parameterType="java.lang.String" resultType="int">
+        SELECT COUNT(*) FROM sys_role WHERE role_name=#{roleName}
+    </select>
+
+    <select id="checkRepeatRoleNameByRole" parameterType="Role" resultType="int">
+        SELECT COUNT(*) FROM sys_role WHERE role_name=#{roleName} AND id=#{id}
+    </select>
+
+    <select id="findAllRole" resultType="Role">
+        SELECT * FROM sys_role
+    </select>
+
+</mapper>

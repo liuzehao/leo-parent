@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.genghis.leo.globalparam.dao.GlobalParamDao">
+
+    <select id="getParamValue" resultType="string">
+        SELECT param_value FROM dict_globalparam d WHERE d.param_name=#{paramName}
+    </select>
+</mapper>

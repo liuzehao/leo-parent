@@ -1,0 +1,104 @@
+@charset "utf-8";
+.divauto {
+    border: 1px solid #817F82;
+    position: absolute;
+    z-index: 100000;
+    width: 300px;
+    top: 18px;
+    background: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 220px;
+    text-align: left;
+    padding-left: 3px;
+}
+
+.divfinance {
+    border: 1px solid #817F82;
+    position: absolute;
+    z-index: 100000;
+    width: 300px;
+    top: 18px;
+    background: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 210px;
+    text-align: left;
+    padding-left: 3px;
+}
+
+/*长google框样式*/
+.divText {
+    width: 280px !important;
+}
+
+/*新增多栏帐科目样式*/
+.divMulText {
+    width: 200px !important;
+}
+
+.divNameAdd {
+    width: 120px;
+    float: left;
+    text-align: right;
+    padding-right: 10px;
+    z-index: 1;
+}
+
+.divInputAdd {
+    width: 120px;
+    z-index: 1;
+    position: relative;
+    float: left;
+}
+
+h3 {
+    color: red;
+}
+
+.itemDiv {
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.showAllDiv {
+    cursor: pointer;
+    line-height: 30px;
+    position: absolute;
+    bottom: 0;
+}
+
+.autoTipDiv {
+    z-index: 9999999;
+    position: absolute;
+    display: none;
+    background: white
+}
+
+.auto_text_btn {
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+    color: #36c;
+    text-decoration: none;
+    width: 60px;
+    height: 25px;
+    background: url(image/dotogether.png) no-repeat;
+}
+
+.auo_text_loading,.auo_text_warn{
+    width:16px;
+    height:16px;
+    display: block;
+    padding-left: 18px;
+}
+.auo_text_loading{
+    background: url(image/ajaxloader.gif) no-repeat;
+}
+
+.auo_text_warn{
+    background: url(image/iconwarning.gif) no-repeat;
+}

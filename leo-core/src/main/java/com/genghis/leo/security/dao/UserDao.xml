@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.genghis.leo.security.dao.UserDao">
+
+    <select id="findUserByLoginName" resultType="User">
+        SELECT * FROM sys_user WHERE login_name=#{loginName}
+    </select>
+
+    <select id="findAllUserPermTokensByUserId" resultType="string">
+        SELECT up.perm_token FROM acl_user_permission up,sys_user u
+        WHERE u.user_id=up.user_id
+        AND u.login_name=#{loginName}
+    </select>
+    
+    <select id="getUserListPage" resultType="User">
+        SELECT a.*,b.`role_name` FROM  sys_user a,sys_role b,sys_user_role c
+        <where>
+            a.`user_id`=c.`user_id`
+            AND b.`id` = c.`role_id`
+            <if test="loginName != null and loginName != ''">
+                AND a.login_name LIKE concat('%',#{loginName},'%')
+            </if>
+            <if test="roleName != null and roleName != ''">
+                AND b.role_name LIKE concat('%',#{roleName},'%')
+            </if>
+            <if test="username != null and username != ''">
+                AND a.user_name LIKE concat('%',#{username},'%')
+            </if>
+        </where>
+        ${sortField} ${sortOrder}
+    </select>
+
+    <insert id="addUserDo" parameterType="user" useGeneratedKeys="true" keyProperty="userId">
+        INSERT INTO sys_user (login_name,user_name,password) VALUES
+        (#{loginName},#{username},#{password})
+    </insert>
+
+    <insert id="addUserRole" parameterType="user">
+        INSERT INTO sys_user_role (user_id,role_id) VALUES
+        (#{userId},#{roleId})
+    </insert>
+    
+    <delete id="delUser" parameterType="int">
+        DELETE FROM sys_user WHERE user_id = #{id}
+    </delete>
+
+    <delete id="delUserRole" parameterType="int">
+        DELETE FROM sys_user_role WHERE user_id = #{id}
+    </delete>
+
+    <select id="findUserById" parameterType="int" resultType="User">
+        SELECT a.*,b.`role_name`,b.id role_id FROM  sys_user a,sys_role b,sys_user_role c
+        WHERE a.`user_id`=c.`user_id`
+        AND b.`id` = c.`role_id`
+        AND a.user_id=#{id}
+    </select>
+
+    <update id="editUser" parameterType="User">
+        UPDATE sys_user SET login_name=#{loginName},user_name=#{username},password=#{password} WHERE user_id=#{userId}
+    </update>
+
+    <update id="editUserRole" parameterType="User">
+        UPDATE sys_user_role SET role_id=#{roleId} WHERE user_id=#{userId}
+    </update>
+
+    <select id="hasCheckRepeatLoginName" parameterType="java.lang.String" resultType="int">
+        SELECT COUNT(*) FROM sys_user WHERE login_name=#{loginName}
+    </select>
+
+    <select id="checkRepeatUser" parameterType="User" resultType="int">
+        SELECT COUNT(*) FROM sys_user WHERE login_name=#{loginName} AND user_id=#{userId}
+    </select>
+
+</mapper>

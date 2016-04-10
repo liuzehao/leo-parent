@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.genghis.leo.security.dao.RolePermissionDao">
+
+    <insert id="addRolePermission" parameterType="com.genghis.leo.security.entity.RolePermission">
+        INSERT INTO acl_role_permission (role_id,perm_id,perm_token) VALUES
+        (#{roleId},#{permId},#{permToken})
+    </insert>
+
+    <delete id="delRolePermission" parameterType="int">
+        DELETE FROM acl_role_permission WHERE role_id = #{id}
+    </delete>
+
+    <select id="findChoosedPermissionTokenByRoleId" resultType="Permission" parameterType="int">
+        SELECT p.* FROM `acl_role_permission` rp,`acl_permission` p WHERE p.`id`=rp.`perm_id` AND rp.`role_id`=#{roleId}
+    </select>
+
+</mapper>

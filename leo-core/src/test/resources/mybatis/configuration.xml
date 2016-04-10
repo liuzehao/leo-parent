@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <settings>
+        <setting name="cacheEnabled" value="false"/>
+        <setting name="localCacheScope" value="STATEMENT"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="callSettersOnNulls" value="true"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias alias="AutoComplete" type="com.genghis.steed.autocomplete.model.AutoComplete"/>
+        <typeAlias alias="GlobalParam" type="com.genghis.steed.globalparam.model.GlobalParam"/>
+    </typeAliases>
+
+    <plugins>
+        <plugin interceptor="com.genghis.steed.mybatis.interceptor.PageInterceptor">
+            <property name="dialect" value="mysql"/>
+            <property name="pageSqlId" value=".*ListPage.*"/>
+        </plugin>
+        <plugin interceptor="com.genghis.steed.mybatis.interceptor.MapInterceptor"/>
+    </plugins>
+</configuration>

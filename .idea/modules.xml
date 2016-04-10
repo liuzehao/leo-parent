@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/leo-core/leo-core.iml" filepath="$PROJECT_DIR$/leo-core/leo-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leo-parent.iml" filepath="$PROJECT_DIR$/leo-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leo-webapp/leo-webapp.iml" filepath="$PROJECT_DIR$/leo-webapp/leo-webapp.iml" />
+    </modules>
+  </component>
+</project>

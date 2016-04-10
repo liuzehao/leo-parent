@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>index</title>
+    <link rel="stylesheet" type="text/css" href="validate.css"/>
+    <script type="text/javascript" src="jquery-1.5.1.js"></script>
+    <script type="text/javascript" src="jquery.tools.min.js"></script>
+    <script type="text/javascript" src="lang/zh-cn.js"></script>
+    <script type="text/javascript" src="util/regExp.js"></script>
+    <script type="text/javascript" src="util/stringUtil.js"></script>
+    <script type="text/javascript" src="util/dateUtil.js"></script>
+    <script type="text/javascript" src="util/numUtil.js"></script>
+    <script type="text/javascript" src="util/checkUtil.js"></script>
+    <script type="text/javascript" src="ccjcJS.js"></script>
+</head>
+<body>
+<br/>
+<br/>
+<br/>
+<br/>
+<form id="form1">
+    <table>
+        <tr>
+            <td>测试input</td>
+            <td><input id="testInput1"/></td>
+            <td>Text1</td>
+            <td><input type="text" id="input1" name="input1" tip="不能为空"/></td>
+            <td>Text2</td>
+            <td><input id="input2" name="input1" tip="不能为空2"/></td>
+            <td>select1</td>
+            <td><select id="select1">
+                <option value="-1" ></option>
+                <option value="1" >1</option>
+                <option value="2" >2</option>
+            </select></td>
+            <td>checkbox1</td>
+            <td>
+                <input type="checkbox" name="testcheckbox" id="testcb1" value="1" tip="不能为空3"/>
+                <input type="checkbox" name="testcheckbox" id="testcb2" value="2"/>
+                <input type="checkbox" name="testcheckbox" id="testcb3" value="3"/>
+                <input type="checkbox" name="testcheckbox" id="testcb4" value="4"/>
+                <input type="checkbox" name="testcheckbox" id="testcb5" value="5"/>
+            </td>
+        </tr>
+    </table>
+
+
+    <!--<input id="input3" name="input1"/>-->
+    <!--<input id="input4" name="input1"/>-->
+    <!--<input id="input5" name="input1"/>-->
+    <!--<input id="input6" name="input1"/>-->
+    <!--<input id="input7" name="input1"/>-->
+    <!--<input id="input8" name="input1"/>-->
+    <input id="input9" type="button" value="test" onclick="test()"/>
+</form>
+</body>
+</html>
+<script type="text/javascript">
+//                    $("input").tooltip(JC.tipConfig);
+//                $("input").hover(
+//                        function() {
+//                            $("#tipText").html($(this).attr("tip"));
+//                            $(this).tooltip(0).show();
+//                        }, function() {
+//                            $(this).tooltip(0).hide();
+//                        })
+//    $("#input1").tooltip(JC.tipConfig).dynamic()
+    var rules = {
+        divInfo:{
+            id:"msg-error "
+        },
+        objInfo:{
+            input1 : {
+                checkEmpty:["input1","Text1"],
+                checkRegExp:["input1","Text1",JCRegExp.email]
+            },
+            input2 : {
+                checkEmpty:["input2","Text2"],
+                compareDate:["input1","input2"]
+            },
+            select1 : {
+                checkSelect:["select1","select1"]
+            },
+            checkbox:{
+                checkcb:["testcheckbox","checkbox1","1","2"]
+            }
+        }
+//        inputInfo:{
+//            input1 : {
+//                checkPassword:["input1","Text1"]
+//            }
+//        }
+
+    }
+
+$(function (){
+    JC.addMethod("checkPassword",checkPassword);
+    JC.addMethod("checkSelect",checkSelect);
+//    JC.setEffect("2").validateByEvent(rules)
+    JC.validateByEvent(rules)
+
+})
+
+function test(){
+//    alert()
+//    alert("8712140213".md5())
+    JC.validate(rules)
+//    inputTrim()
+//    alert(checkNum("3.1",1,2).bool)
+}
+function checkPassword(args){
+        var objId = args[0]
+        var objText = args[1]
+        var obj = $("#"+objId);
+        var returnObj = {}
+        returnObj.obj = obj;
+        var pass = obj.val().trim();
+        var pattern = /^[0-9a-zA-Z_]+$/;
+        if(!pattern.test(pass)){
+            returnObj.msg = objText + "只允许输入字母、数字、下划线！";
+            returnObj.bool = false;
+            return returnObj
+        }
+        returnObj.bool = true;
+        return returnObj
+    }
+
+</script>
