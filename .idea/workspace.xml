@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d7d98fa-dfd3-40a8-8a94-86bd59231e98" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leo-webapp/src/main/java/com/genghis/leo/security/FileController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leo-webapp/src/main/java/com/genghis/leo/security/ThemeController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leo-webapp/src/main/webapp/WEB-INF/jsp/admin/file/listAllFileDo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leo-webapp/src/main/webapp/WEB-INF/jsp/admin/file/listAllFileFileDo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leo-webapp/src/main/webapp/WEB-INF/jsp/admin/file/listAllMusicFileDo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leo-webapp/src/main/webapp/WEB-INF/jsp/admin/file/listAllOtherFileDo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leo-webapp/src/main/webapp/WEB-INF/jsp/admin/file/listAllVideoFileDo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leo-webapp/src/main/webapp/WEB-INF/jsp/admin/theme/listAllThemeDo.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leo-core/target/classes/com/genghis/leo/security/service/impl/PermissionServiceImpl.class" afterPath="$PROJECT_DIR$/leo-core/target/classes/com/genghis/leo/security/service/impl/PermissionServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leo-core/target/classes/com/genghis/leo/svnkit/SvnUtil.class" afterPath="$PROJECT_DIR$/leo-core/target/classes/com/genghis/leo/svnkit/SvnUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leo-core/target/classes/com/genghis/leo/svnkit/UpdateEventHandler.class" afterPath="$PROJECT_DIR$/leo-core/target/classes/com/genghis/leo/svnkit/UpdateEventHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leo-webapp/target/leo-webapp-1.0.0-SNAPSHOT/WEB-INF/lib/leo-core-1.0.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/leo-webapp/target/leo-webapp-1.0.0-SNAPSHOT/WEB-INF/lib/leo-core-1.0.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leo-core/src/main/java/com/genghis/leo/security/service/impl/PermissionServiceImpl.java" afterPath="$PROJECT_DIR$/leo-core/src/main/java/com/genghis/leo/security/service/impl/PermissionServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leo-core/src/main/java/com/genghis/leo/upload/Dao/upload.xml" afterPath="$PROJECT_DIR$/leo-core/src/main/java/com/genghis/leo/upload/Dao/upload.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leo-core/target/classes/com/genghis/leo/upload/Dao/upload.xml" afterPath="$PROJECT_DIR$/leo-core/target/classes/com/genghis/leo/upload/Dao/upload.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leo-webapp/leo-webapp.iml" afterPath="$PROJECT_DIR$/leo-webapp/leo-webapp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leo-webapp/src/main/webapp/WEB-INF/jsp/includes/menu.jsp" afterPath="$PROJECT_DIR$/leo-webapp/src/main/webapp/WEB-INF/jsp/includes/menu.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leo-webapp/target/leo-webapp-1.0.0-SNAPSHOT/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/leo-webapp/target/leo-webapp-1.0.0-SNAPSHOT/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leo-webapp/target/leo-webapp-1.0.0-SNAPSHOT/WEB-INF/jsp/includes/menu.jsp" afterPath="$PROJECT_DIR$/leo-webapp/target/leo-webapp-1.0.0-SNAPSHOT/WEB-INF/jsp/includes/menu.jsp" />
     </list>
     <ignored path="leo-parent.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1365,12 +1342,19 @@
       <workItem from="1460867485770" duration="1705000" />
       <workItem from="1460869470678" duration="550000" />
       <workItem from="1460870866833" duration="126000" />
-      <workItem from="1460871435016" duration="2271000" />
+      <workItem from="1460871435016" duration="2403000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit&#10;权限">
+      <created>1460873989967</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1460873989967</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210548000" />
+    <option name="totallyTimeSpent" value="210680000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
