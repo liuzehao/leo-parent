@@ -33,12 +33,38 @@
             <shiro:hasPermission name="user_admin">
             <li id="permissionLeaf_1_1"><a href="<%=basePath%>admin/user/getAllUserDo">用户管理</a></li>
             </shiro:hasPermission>
+
+
+            <shiro:hasPermission name="file_admin">
+                <li id="permissionLeaf_1_4"><a href="<%=basePath%>admin/permission/listAllPermissionPageDo">文件管理</a>
+                <ul class="sub-menu">
+                    <li id="permissionLeaf_1_4_1"><a href="<%=basePath%>admin/file/getAllFileFileDo">文档</a></li>
+                    <li id="permissionLeaf_1_4_2"><a href="<%=basePath%>admin/file/getAllVideoFileDo">视频</a></li>
+                    <li id="permissionLeaf_1_4_3"><a href="<%=basePath%>admin/file/getAllMusicFileDo">音频</a></li>
+                    <li id="permissionLeaf_1_4_4"><a href="<%=basePath%>admin/file/getAllOtherFileDo">图片</a></li>
+
+
+                </ul>
+
+
+                </li>
+
+            </shiro:hasPermission>
+            <shiro:hasPermission name="theme_admin">
+                <li id="permissionLeaf_1_5"><a href="<%=basePath%>admin/theme/getAllThemeDo">领域管理</a></li>
+
+            </shiro:hasPermission>
+
             <shiro:hasPermission name="role_admin">
             <li id="permissionLeaf_1_2"><a href="<%=basePath%>admin/role/listAllRoleDo">角色管理</a></li>
             </shiro:hasPermission>
             <shiro:hasPermission name="perm_admin">
             <li id="permissionLeaf_1_3"><a href="<%=basePath%>admin/permission/listAllPermissionPageDo">权限管理</a></li>
             </shiro:hasPermission>
+
+
+
+
         </ul>
     </li>
     </shiro:hasPermission>

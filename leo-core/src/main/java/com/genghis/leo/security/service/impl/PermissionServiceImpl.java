@@ -27,6 +27,8 @@ public class PermissionServiceImpl implements PermissionService {
         menuPermList.add(new MenuPerm(3,"user_admin","用户管理",2));
         menuPermList.add(new MenuPerm(3,"role_admin","角色管理",2));
         menuPermList.add(new MenuPerm(3,"perm_admin","权限管理",2));
+        menuPermList.add(new MenuPerm(3,"file_admin","文件管理",2));
+        menuPermList.add(new MenuPerm(3,"theme_admin","领域管理",2));
         return menuPermList;
     }
 
