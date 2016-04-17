@@ -9,34 +9,21 @@ import com.genghis.steed.mybatis.model.PageBase;
 public class User extends PageBase{
 
     private int userId;
-    private String username;
-    private String loginName;
-    private String password;
-    private String rePassword;
-    private boolean rememberMe;
 
-    private int roleId;
-    private String showRoleId;
-    private String roleName;
-
-    public String getRoleName() {
-        return roleName;
+    public boolean isRememberMe() {
+        return rememberMe;
     }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    public void setRememberMe(boolean rememberMe) {
+        this.rememberMe = rememberMe;
     }
 
-    public User() {
-
+    public String getUserTelephone() {
+        return userTelephone;
     }
 
-    public String getRePassword() {
-        return rePassword;
-    }
-
-    public void setRePassword(String rePassword) {
-        this.rePassword = rePassword;
+    public void setUserTelephone(String userTelephone) {
+        this.userTelephone = userTelephone;
     }
 
     public int getUserId() {
@@ -71,27 +58,20 @@ public class User extends PageBase{
         this.password = password;
     }
 
-    public boolean isRememberMe() {
-        return rememberMe;
+    public String getEmail() {
+        return email;
     }
 
-    public void setRememberMe(boolean rememberMe) {
-        this.rememberMe = rememberMe;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getRoleId() {
-        return roleId;
-    }
+    private String username;
+    private String loginName;
+    private String password;
+    private String email;
+    private String userTelephone;
+    private boolean rememberMe;
 
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }
 
-    public String getShowRoleId() {
-        return showRoleId;
-    }
-
-    public void setShowRoleId(String showRoleId) {
-        this.showRoleId = showRoleId;
-    }
 }

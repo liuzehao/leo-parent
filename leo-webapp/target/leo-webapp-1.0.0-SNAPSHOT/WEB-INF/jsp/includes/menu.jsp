@@ -22,26 +22,21 @@
         <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
         <!-- END RESPONSIVE QUICK SEARCH FORM -->
     </li>
-    <shiro:hasPermission name="admin">
+
     <li id="permission_1">
         <a href="javascript:;">
             <i class="fa fa-user faa-pulse animated-hover"></i>
             <span class="title">系统设置</span>
             <span class="arrow "> </span>
         </a>
+        <div class="sidebar col-md-3 col-sm-3">
         <ul class="sub-menu">
-            <shiro:hasPermission name="user_admin">
             <li id="permissionLeaf_1_1"><a href="<%=basePath%>admin/user/getAllUserDo">用户管理</a></li>
-            </shiro:hasPermission>
-            <shiro:hasPermission name="role_admin">
             <li id="permissionLeaf_1_2"><a href="<%=basePath%>admin/role/listAllRoleDo">角色管理</a></li>
-            </shiro:hasPermission>
-            <shiro:hasPermission name="perm_admin">
             <li id="permissionLeaf_1_3"><a href="<%=basePath%>admin/permission/listAllPermissionPageDo">权限管理</a></li>
-            </shiro:hasPermission>
         </ul>
+        </div>
     </li>
-    </shiro:hasPermission>
 </ul>
 <script type="text/javascript">
     var permissionNum=$("#permissionNum").val();
