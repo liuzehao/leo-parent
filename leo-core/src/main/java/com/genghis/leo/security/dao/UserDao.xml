@@ -56,7 +56,7 @@
     </select>
 
     <update id="editUser" parameterType="User">
-        UPDATE sys_user SET login_name=#{loginName},user_name=#{username},password=#{password} WHERE user_id=#{userId}
+        UPDATE sys_user SET login_name=#{loginName},user_name=#{username},email=#{email},user_telephone=#{userTelephone} WHERE user_id=#{userId}
     </update>
 
     <update id="editUserRole" parameterType="User">
